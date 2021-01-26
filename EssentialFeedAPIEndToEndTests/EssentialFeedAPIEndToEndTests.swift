@@ -25,6 +25,7 @@ class EssentialFeedAPIEndToEndTests: XCTestCase {
       
     case let .failure(error):
       XCTFail("Expected successful feed result, got \(error) instead")
+      
     case .none:
       XCTFail("Expected successful feed result, got no result instead")
     }
@@ -36,10 +37,12 @@ class EssentialFeedAPIEndToEndTests: XCTestCase {
 
 extension EssentialFeedAPIEndToEndTests {
   
-  private func getFeedResult() -> LoadFeedResult? {
+  private func getFeedResult(file: StaticString = #filePath, line: UInt = #line) -> LoadFeedResult? {
     let testServerURL = URL(string: "https://essentialdeveloper.com/feed-case-study/test-api/feed")!
     let client = URLSessionHTTPClient()
     let loader = RemoteFeedLoader(url: testServerURL, client: client)
+    trackForMemoryLeaks(client, file: file, line: line)
+    trackForMemoryLeaks(loader, file: file, line: line)
     
     let exp = expectation(description: "Wait for load completion")
     
