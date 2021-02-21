@@ -17,6 +17,7 @@
 		FA9ACE7C25B5C86700532EAC /* EssentialFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF7179F258EB2B0005F9242 /* EssentialFeed.framework */; };
 		FAB5703E25DEA293002B1A28 /* LocalFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5703D25DEA293002B1A28 /* LocalFeedLoader.swift */; };
 		FAB5704625DEA3AA002B1A28 /* FeedStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5704525DEA3AA002B1A28 /* FeedStore.swift */; };
+		FAB5704B25E32570002B1A28 /* RemoteFeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB5704A25E32570002B1A28 /* RemoteFeedItem.swift */; };
 		FAEBAF0525C056B90093916C /* XCTestsCase+MemoryLeakTracking.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9ACE0F25A6A02500532EAC /* XCTestsCase+MemoryLeakTracking.swift */; };
 		FAF717AD258EB303005F9242 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF717AC258EB303005F9242 /* FeedItem.swift */; };
 		FAF717B0258EB494005F9242 /* FeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF717AF258EB494005F9242 /* FeedLoader.swift */; };
@@ -54,6 +55,7 @@
 		FA9ACE7B25B5C86700532EAC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAB5703D25DEA293002B1A28 /* LocalFeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalFeedLoader.swift; sourceTree = "<group>"; };
 		FAB5704525DEA3AA002B1A28 /* FeedStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedStore.swift; sourceTree = "<group>"; };
+		FAB5704A25E32570002B1A28 /* RemoteFeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedItem.swift; sourceTree = "<group>"; };
 		FAF7179F258EB2B0005F9242 /* EssentialFeed.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EssentialFeed.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAF717A3258EB2B0005F9242 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAF717AC258EB303005F9242 /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
@@ -110,8 +112,8 @@
 		FA9ACE7825B5C86700532EAC /* EssentialFeedAPIEndToEndTests */ = {
 			isa = PBXGroup;
 			children = (
-				FA9ACE7925B5C86700532EAC /* EssentialFeedAPIEndToEndTests.swift */,
 				FA9ACE7B25B5C86700532EAC /* Info.plist */,
+				FA9ACE7925B5C86700532EAC /* EssentialFeedAPIEndToEndTests.swift */,
 			);
 			path = EssentialFeedAPIEndToEndTests;
 			sourceTree = "<group>";
@@ -168,10 +170,10 @@
 		FAF717B9258EBEFF005F9242 /* EssentialFeedTests */ = {
 			isa = PBXGroup;
 			children = (
-				FA9ACE0E25A69FDC00532EAC /* Helpers */,
+				FAF717BC258EBEFF005F9242 /* Info.plist */,
 				FAFBA51525996D8400CB25EA /* Feed API */,
 				FA37B14B25DB72CF00E21A4A /* Feed Cache */,
-				FAF717BC258EBEFF005F9242 /* Info.plist */,
+				FA9ACE0E25A69FDC00532EAC /* Helpers */,
 			);
 			path = EssentialFeedTests;
 			sourceTree = "<group>";
@@ -179,9 +181,10 @@
 		FAF717CB258FCD5C005F9242 /* Feed API */ = {
 			isa = PBXGroup;
 			children = (
-				FAF717CC258FCD8C005F9242 /* RemoteFeedLoader.swift */,
-				FA1C53DD2596EF9800DC9E04 /* HTTPClient.swift */,
 				FA8684D02596F4B20097FBF8 /* FeedItemsMapper.swift */,
+				FA1C53DD2596EF9800DC9E04 /* HTTPClient.swift */,
+				FAB5704A25E32570002B1A28 /* RemoteFeedItem.swift */,
+				FAF717CC258FCD8C005F9242 /* RemoteFeedLoader.swift */,
 				FA9ACE4025AA6CF800532EAC /* URLSessionHTTPClient.swift */,
 			);
 			path = "Feed API";
@@ -345,6 +348,7 @@
 			files = (
 				FA8684D12596F4B20097FBF8 /* FeedItemsMapper.swift in Sources */,
 				FAF717B0258EB494005F9242 /* FeedLoader.swift in Sources */,
+				FAB5704B25E32570002B1A28 /* RemoteFeedItem.swift in Sources */,
 				FAF717CD258FCD8C005F9242 /* RemoteFeedLoader.swift in Sources */,
 				FAB5704625DEA3AA002B1A28 /* FeedStore.swift in Sources */,
 				FAB5703E25DEA293002B1A28 /* LocalFeedLoader.swift in Sources */,
