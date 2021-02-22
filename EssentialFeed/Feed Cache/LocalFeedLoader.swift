@@ -40,7 +40,7 @@ public final class LocalFeedLoader {
   }
 }
 
-extension Array where Element == FeedImage {
+private extension Array where Element == FeedImage {
   
   func toLocal() -> [LocalFeedImage] {
     return map {
