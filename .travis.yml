@@ -1,1 +1,4 @@
-OS:
+os: osx
+osx_image: xcode12.1
+language: swift
+script: xcodebuild clean build test -project EssentialFeed.xcodeproj -scheme "CI" CODE_SIGNING_IDENTITY="" CODE_SIGNING_REQUIRED=NO
