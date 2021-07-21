@@ -4,6 +4,8 @@ I just put in practice the mentoring sessions of the [iOS Lead Essentials](https
 
 # Image Feed Feature
 
+[![Build Status](https://travis-ci.com/Mentalex/EssentialFeed.svg?branch=main)](https://travis-ci.com/Mentalex/EssentialFeed)
+
 ## BDD Specs
 
 ### Story: Customer requests to see the feed
