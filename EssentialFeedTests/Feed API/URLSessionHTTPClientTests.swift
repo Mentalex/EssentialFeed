@@ -17,7 +17,7 @@ class URLSessionHTTPClientTests: XCTestCase {
   
   override func tearDown() {
     super.tearDown()
-    URLProtocolStub.stopterceptingRequests()
+    URLProtocolStub.stopInterceptingRequests()
   }
   
   func test_getFromURL_performsGETRequestWithURL() {
@@ -166,7 +166,7 @@ class URLSessionHTTPClientTests: XCTestCase {
       URLProtocol.registerClass(URLProtocolStub.self)
     }
     
-    static func stopterceptingRequests() {
+    static func stopInterceptingRequests() {
       URLProtocol.unregisterClass(URLProtocolStub.self)
       stub = nil
       requestObserver = nil
