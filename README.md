@@ -1,6 +1,6 @@
 ## Credits
 All this project (code and resources) is not my creation.
-I just put in practice the mentoring sessions of the [iOS Lead Essentials](https://iosacademy.essentialdeveloper.com/p/ios-lead-essentials/) curse, property of [Essential Developer](https://www.essentialdeveloper.com/)
+I just put in practice the mentoring sessions of the [iOS Lead Essentials](https://iosacademy.essentialdeveloper.com/p/ios-lead-essentials/) course, ownership of [Essential Developer](https://www.essentialdeveloper.com/)
 
 # Image Feed Feature
 
