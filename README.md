@@ -8,7 +8,7 @@ I just put in practice the mentoring sessions of the [iOS Lead Essentials](https
 
 ## BDD Specs
 
-### Story: Customer requests to see the feed
+### Story: Customer requests to see their image feed
 
 ### Narrative #1
 
@@ -22,7 +22,7 @@ So I can always enjoy the newest images of my friends
 
 ```
 Given the customer has connectivity
- When the customer requests to see the feed
+ When the customer requests to see their feed
  Then the app should display the latest feed from remote
   And replace the cache with the new feed
 ```
@@ -39,19 +39,26 @@ So I can always enjoy images of my friends
 
 ```
 Given the customer doesn't have connectivity
- And there's a cached version of the feed
+  And there's a cached version of the feed
+  And the cache is less than seven days old
  When the customer requests to see the feed
  Then the app should display the latest feed saved
 
 Given the customer doesn't have connectivity
- And the cache is empty
+  And there's a cached version of the feed
+  And the cache is seven days old or more
+ When the customer requests to see the feed
+ Then the app should display an error message
+
+Given the customer doesn't have connectivity
+  And the cache is empty
  When the customer requests to see the feed
  Then the app should display an error message
 ```
 
 ## Use Cases
 
-### Load Feed
+### Load Feed From Remote Use Case
 
 #### Data:
 - URL
@@ -64,38 +71,54 @@ Given the customer doesn't have connectivity
 5. System delivers feed items.
 
 #### Invalid data – error course (sad path):
-1. System delivers error.
+1. System delivers invalid data error.
 
 #### No connectivity – error course (sad path):
-1. System delivers error.
+1. System delivers connectivity error.
 
 
-### Load Feed From Fallback (Cache)
+### Load Feed From Cache Use Case
 
 #### Data:
-- Max age
+- Max age (7 days)
 
 #### Primary course:
-1. Execute "Retrieve Feed Items" command with above data.
+1. Execute "Load Feed Items" command with above data.
 2. System fetches feed data from cache.
-3. System creates feed items from cached data.
-4. System delivers feed items.
+3. System validates cache is less than seven days old.
+4. System creates feed items from cached data.
+5. System delivers feed items.
 
-#### No cache course (sad path):
+#### Error course (sad path):
+1. System delivers error.
+
+#### Expired cache course (sad path):
+1. System deletes cache.
+2. System delivers no feed items.
+
+#### Empty cache course (sad path):
 1. System delivers no feed items.
 
 
-### Save Feed Items
+### Cache Feed Use Case
 
 #### Data:
 - Feed items
 
 #### Primary course (happy path):
 1. Execute "Save Feed Items" command with above data.
-2. System encodes feed items.
-3. System timestamps the new cache.
-4. System replaces the cache with new data.
-5. System delivers success message.
+2. System deletes old cache data.
+3. System encodes feed items.
+4. System timestamps the new cache.
+5. System saves new cache data.
+6. System delivers success message.
+
+#### Deleting error course (sad path):
+1. System delivers error.
+
+#### Saving error course (sad path):
+1. System delivers error.
+
 
 ## Flowchart
 
