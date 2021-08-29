@@ -25,6 +25,15 @@ class ValidateFeedCacheUseCaseTest: XCTestCase {
     XCTAssertEqual(store.receivedMessages, [.retrieve, .deleteCachedFeed])
   }
   
+  func test_validateCache_doesNotDeleteCacheOnEmptyCache() {
+    let (sut, store) = makeSUT()
+    
+    sut.validateCache()
+    store.completeRetrievalWithEmtyCache()
+    
+    XCTAssertEqual(store.receivedMessages, [.retrieve])
+  }
+  
   // MARK: - Helpers
 
   private func makeSUT(currentDate: @escaping () -> Date = Date.init,
