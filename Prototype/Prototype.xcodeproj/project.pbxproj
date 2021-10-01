@@ -13,6 +13,7 @@
 		FAECF5FD27076F7D009F4CF5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAECF5FC27076F7D009F4CF5 /* Assets.xcassets */; };
 		FAECF60027076F7D009F4CF5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAECF5FE27076F7D009F4CF5 /* LaunchScreen.storyboard */; };
 		FAECF60827078DF4009F4CF5 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAECF60727078DF4009F4CF5 /* FeedViewController.swift */; };
+		FAECF60A27079698009F4CF5 /* FeedImageViewModel+PrototypeData.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAECF60927079698009F4CF5 /* FeedImageViewModel+PrototypeData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		FAECF5FF27076F7D009F4CF5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FAECF60127076F7D009F4CF5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAECF60727078DF4009F4CF5 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		FAECF60927079698009F4CF5 /* FeedImageViewModel+PrototypeData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedImageViewModel+PrototypeData.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,13 +58,14 @@
 		FAECF5F227076F7A009F4CF5 /* Prototype */ = {
 			isa = PBXGroup;
 			children = (
+				FAECF60127076F7D009F4CF5 /* Info.plist */,
 				FAECF5F327076F7A009F4CF5 /* AppDelegate.swift */,
+				FAECF60927079698009F4CF5 /* FeedImageViewModel+PrototypeData.swift */,
+				FAECF60727078DF4009F4CF5 /* FeedViewController.swift */,
 				FAECF5F527076F7A009F4CF5 /* SceneDelegate.swift */,
-				FAECF5F927076F7A009F4CF5 /* Main.storyboard */,
 				FAECF5FC27076F7D009F4CF5 /* Assets.xcassets */,
 				FAECF5FE27076F7D009F4CF5 /* LaunchScreen.storyboard */,
-				FAECF60127076F7D009F4CF5 /* Info.plist */,
-				FAECF60727078DF4009F4CF5 /* FeedViewController.swift */,
+				FAECF5F927076F7A009F4CF5 /* Main.storyboard */,
 			);
 			path = Prototype;
 			sourceTree = "<group>";
@@ -141,6 +144,7 @@
 				FAECF5F427076F7A009F4CF5 /* AppDelegate.swift in Sources */,
 				FAECF60827078DF4009F4CF5 /* FeedViewController.swift in Sources */,
 				FAECF5F627076F7A009F4CF5 /* SceneDelegate.swift in Sources */,
+				FAECF60A27079698009F4CF5 /* FeedImageViewModel+PrototypeData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
