@@ -134,9 +134,7 @@ extension LoadFeedFromRemoteUseCaseTests {
       "description": description,
       "location": location,
       "image": imageURL.absoluteString
-    ].reduce(into: [String: Any](), { actual, pair in
-      if let value = pair.value { actual[pair.key] = value }
-    })
+    ].compactMapValues { $0 } 
     
     return (item, json)
   }
