@@ -35,51 +35,65 @@ class CodableFeedStoreTests: XCTestCase, FailableFeedStore {
   }
   
   func test_retrieve_deliversFoundValuesOnNonEmptyCache() {
+    #if os(OSX)
     let sut = makeSUT()
     
     assertThatRetrieveDeliversFoundValuesOnNonEmptyCache(on: sut)
+    #endif
   }
   
   func test_retrieve_hasNoSideEffectsOnNonEmptyCache() {
+    #if os(OSX)
     let sut = makeSUT()
     
     assertThatRetrieveHasNoSideEffectsOnNonEmptyCache(on: sut)
+    #endif
   }
   
   func test_retrieve_deliversFailureOnRetrievalError() {
+    #if os(OSX)
     let storeURL = testSpecificStoreURL()
     let sut = makeSUT(storeURL: storeURL)
     
     try! "invalid data".write(to: storeURL, atomically: false, encoding: .utf8)
     
     assertThatRetrieveDeliversFailureOnRetrievalError(on: sut)
+    #endif
   }
 
   func test_retrieve_hasNoSideEffectsOnFailure() {
+    #if os(OSX)
     let storeURL = testSpecificStoreURL()
     let sut = makeSUT(storeURL: storeURL)
     
     try! "invalid data".write(to: storeURL, atomically: false, encoding: .utf8)
     
     assertThatRetrieveHasNoSideEffectsOnFailure(on: sut)
+    #endif
   }
   
   func test_insert_deliversNoErrorOnEmptyCache() {
+    #if os(OSX)
     let sut = makeSUT()
     
     assertThatInsertDeliversNoErrorOnEmptyCache(on: sut)
+    #endif
   }
   
   func test_insert_deliversNoErrorOnNonEmptyCache() {
+    #if os(OSX)
     let sut = makeSUT()
     
     assertThatInsertDeliversNoErrorOnNonEmptyCache(on: sut)
+    #endif
   }
   
   func test_insert_overridesPreviouslyInsertedCacheValues() {
+    #if os(OSX)
     let sut = makeSUT()
     
     assertThatInsertOverridesPreviouslyInsertedCacheValues(on: sut)
+    #endif
   }
   
   func test_insert_deliversErrorOnInsertionError() {
@@ -121,10 +135,12 @@ class CodableFeedStoreTests: XCTestCase, FailableFeedStore {
   }
   
   func test_delete_deliversErrorOnDeletionError() {
+    #if os(OSX)
     let noDeletePermissionURL = cachesDirectory()
     let sut = makeSUT(storeURL: noDeletePermissionURL)
-    
+      
     assertThatDeleteDeliversErrorOnDeletionError(on: sut)
+    #endif
   }
   
   func test_delete_hasNoSideEffectsOnDeletionError() {
