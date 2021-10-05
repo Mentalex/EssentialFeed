@@ -4,7 +4,7 @@ I just put in practice the mentoring sessions of the [iOS Lead Essentials](https
 
 # Image Feed Feature
 
-[![Build Status](https://travis-ci.com/Mentalex/EssentialFeed.svg?branch=main)](https://travis-ci.com/Mentalex/EssentialFeed)
+[![CI](https://github.com/Mentalex/EssentialFeed/actions/workflows/CI.yml/badge.svg)](https://github.com/Mentalex/EssentialFeed/actions/workflows/CI.yml)
 
 ## BDD Specs
 
