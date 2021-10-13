@@ -65,6 +65,7 @@
 		FAF717BD258EBEFF005F9242 /* EssentialFeed.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAF7179F258EB2B0005F9242 /* EssentialFeed.framework */; };
 		FAF717C8258ED17D005F9242 /* LoadFeedFromRemoteUseCaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF717C7258ED17D005F9242 /* LoadFeedFromRemoteUseCaseTests.swift */; };
 		FAF717CD258FCD8C005F9242 /* RemoteFeedLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF717CC258FCD8C005F9242 /* RemoteFeedLoader.swift */; };
+		FAFA0CC1271678EC001F06E3 /* FeedImageCellController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFA0CC0271678EC001F06E3 /* FeedImageCellController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -176,6 +177,7 @@
 		FAF717BC258EBEFF005F9242 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FAF717C7258ED17D005F9242 /* LoadFeedFromRemoteUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadFeedFromRemoteUseCaseTests.swift; sourceTree = "<group>"; };
 		FAF717CC258FCD8C005F9242 /* RemoteFeedLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedLoader.swift; sourceTree = "<group>"; };
+		FAFA0CC0271678EC001F06E3 /* FeedImageCellController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageCellController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -292,8 +294,9 @@
 		FA9120B12713CEAF004CE09C /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				FA5EE072270CED6600F10642 /* FeedViewController.swift */,
+				FAFA0CC0271678EC001F06E3 /* FeedImageCellController.swift */,
 				FA4769C42715231800F0134C /* FeedRefreshViewController.swift */,
+				FA5EE072270CED6600F10642 /* FeedViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -760,6 +763,7 @@
 				FA835EC927123CAD008FD29D /* UIView+Shimmering.swift in Sources */,
 				FA5EE073270CED6600F10642 /* FeedViewController.swift in Sources */,
 				FA9333FA271131FA003E2E8D /* FeedImageCell.swift in Sources */,
+				FAFA0CC1271678EC001F06E3 /* FeedImageCellController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
