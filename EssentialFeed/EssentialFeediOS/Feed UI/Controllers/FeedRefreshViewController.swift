@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import EssentialFeed
 
 final class FeedRefreshViewController: NSObject {
   
@@ -17,8 +16,6 @@ final class FeedRefreshViewController: NSObject {
   init(viewModel: FeedViewModel) {
     self.viewModel = viewModel
   }
-  
-  var onRefresh: (([FeedImage]) -> Void)?
   
   @objc func refresh() {
     viewModel.loadFeed()
