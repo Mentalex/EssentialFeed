@@ -5,8 +5,6 @@
 //  Created by Alex Tapia on 17/10/21.
 //
 
-import Foundation
-
 struct FeedImageViewModel<Image> {
   let description: String?
   let location: String?
