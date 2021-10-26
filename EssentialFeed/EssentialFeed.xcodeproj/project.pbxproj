@@ -146,6 +146,7 @@
 		FA2E625026FC181A00E0BF1A /* FeedStoreSpecs.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedStoreSpecs.swift; sourceTree = "<group>"; };
 		FA37B14C25DB733E00E21A4A /* CacheFeedUseCaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheFeedUseCaseTests.swift; sourceTree = "<group>"; };
 		FA39045E27279BF0004EA223 /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Feed.strings"; sourceTree = "<group>"; };
+		FA39045F27279D02004EA223 /* el */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = el; path = el.lproj/Feed.strings; sourceTree = "<group>"; };
 		FA41FFE226DC14DA00A8940A /* ValidateFeedCacheUseCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateFeedCacheUseCaseTest.swift; sourceTree = "<group>"; };
 		FA41FFE426DC32A700A8940A /* FeedCacheTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCacheTestHelpers.swift; sourceTree = "<group>"; };
 		FA41FFE626DC35A400A8940A /* SharedTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestHelpers.swift; sourceTree = "<group>"; };
@@ -708,6 +709,7 @@
 				en,
 				Base,
 				"pt-BR",
+				el,
 			);
 			mainGroup = FAF71795258EB2B0005F9242;
 			productRefGroup = FAF717A0258EB2B0005F9242 /* Products */;
@@ -913,6 +915,7 @@
 			children = (
 				FA97CFE32727946B00F9470F /* en */,
 				FA39045E27279BF0004EA223 /* pt-BR */,
+				FA39045F27279D02004EA223 /* el */,
 			);
 			name = Feed.strings;
 			sourceTree = "<group>";
