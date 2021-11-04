@@ -24,11 +24,11 @@ extension FeedUIIntegrationTests {
       feedRequests.append(completion)
     }
     
-    func completFeedLoading(with feed: [FeedImage] = [], at index: Int) {
+    func completeFeedLoading(with feed: [FeedImage] = [], at index: Int) {
       feedRequests[index](.success(feed))
     }
     
-    func completFeedLoadingWithError(at index: Int) {
+    func completeFeedLoadingWithError(at index: Int) {
       let error = NSError(domain: "an error", code: 0)
       feedRequests[index](.failure(error))
     }
