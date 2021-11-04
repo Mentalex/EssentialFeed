@@ -29,8 +29,10 @@
                                 </label>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            <gestureRecognizers/>
                             <connections>
                                 <outlet property="label" destination="x0g-qQ-2Qb" id="WqC-XF-9YV"/>
+                                <outletCollection property="gestureRecognizers" destination="x5G-bd-u6w" appends="YES" id="dyI-W9-Mcb"/>
                             </connections>
                         </view>
                         <view key="tableFooterView" contentMode="scaleToFill" id="l7b-Sa-uno">
@@ -164,6 +166,11 @@ Location</string>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gPT-8J-B2U" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="x5G-bd-u6w">
+                    <connections>
+                        <action selector="hideMessageAnimated" destination="fO8-ej-Mwz" id="6Z0-ec-KLz"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="129" y="-260"/>
         </scene>
