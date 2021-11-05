@@ -315,6 +315,16 @@
 			path = "Feed Presentation";
 			sourceTree = "<group>";
 		};
+		FA4038F12734D8CF0049492C /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FA184FD227250D0500CE6273 /* UIImageView+Animations.swift */,
+				FA184FD027250A9900CE6273 /* UITableView+Dequeueing.swift */,
+				FA835EC827123CAD008FD29D /* UIView+Shimmering.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		FA6CC001271E689100CF3DA9 /* Feed Presentation */ = {
 			isa = PBXGroup;
 			children = (
@@ -358,10 +368,8 @@
 				FAA91F3E2723BB860067C235 /* Feed.storyboard */,
 				FA3F782527341AC50024495D /* ErrorView.swift */,
 				FA9333F9271131FA003E2E8D /* FeedImageCell.swift */,
-				FA184FD227250D0500CE6273 /* UIImageView+Animations.swift */,
-				FA184FD027250A9900CE6273 /* UITableView+Dequeueing.swift */,
-				FA835EC827123CAD008FD29D /* UIView+Shimmering.swift */,
 				FAA91F402723BCC00067C235 /* Feed.xcassets */,
+				FA4038F12734D8CF0049492C /* Helpers */,
 			);
 			path = Views;
 			sourceTree = "<group>";
