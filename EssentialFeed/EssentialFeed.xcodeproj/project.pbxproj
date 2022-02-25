@@ -26,6 +26,7 @@
 		FA41FFE726DC35A400A8940A /* SharedTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA41FFE626DC35A400A8940A /* SharedTestHelpers.swift */; };
 		FA463D8F278F392800224F17 /* FeedImageDataLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9120C02713D72C004CE09C /* FeedImageDataLoader.swift */; };
 		FA463D91278F3A2700224F17 /* RemoteFeedImageDataLoaderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA463D90278F3A2700224F17 /* RemoteFeedImageDataLoaderTests.swift */; };
+		FA46B07B27C89F2F00D29973 /* HTTPURLResponse+StatusCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA46B07A27C89F2F00D29973 /* HTTPURLResponse+StatusCode.swift */; };
 		FA5EE073270CED6600F10642 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA5EE072270CED6600F10642 /* FeedViewController.swift */; };
 		FA63A250278792D000DE2D82 /* FeedLocalizationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA39046127279F48004EA223 /* FeedLocalizationTests.swift */; };
 		FA63A2522787954100DE2D82 /* FeedImagePresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA63A2512787954100DE2D82 /* FeedImagePresenterTests.swift */; };
@@ -168,6 +169,7 @@
 		FA41FFE426DC32A700A8940A /* FeedCacheTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCacheTestHelpers.swift; sourceTree = "<group>"; };
 		FA41FFE626DC35A400A8940A /* SharedTestHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedTestHelpers.swift; sourceTree = "<group>"; };
 		FA463D90278F3A2700224F17 /* RemoteFeedImageDataLoaderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteFeedImageDataLoaderTests.swift; sourceTree = "<group>"; };
+		FA46B07A27C89F2F00D29973 /* HTTPURLResponse+StatusCode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HTTPURLResponse+StatusCode.swift"; sourceTree = "<group>"; };
 		FA5EE072270CED6600F10642 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		FA63A2512787954100DE2D82 /* FeedImagePresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImagePresenterTests.swift; sourceTree = "<group>"; };
 		FA77F2D32726DEEC00EE26FD /* FeedViewControllerTests+Localization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FeedViewControllerTests+Localization.swift"; sourceTree = "<group>"; };
@@ -328,6 +330,14 @@
 				FA4038F42734DACC0049492C /* UIRefreshControl+Helpers.swift */,
 				FA184FD027250A9900CE6273 /* UITableView+Dequeueing.swift */,
 				FA835EC827123CAD008FD29D /* UIView+Shimmering.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		FA46B07927C89EE600D29973 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				FA46B07A27C89F2F00D29973 /* HTTPURLResponse+StatusCode.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -570,10 +580,11 @@
 			children = (
 				FA8684D02596F4B20097FBF8 /* FeedItemsMapper.swift */,
 				FA1C53DD2596EF9800DC9E04 /* HTTPClient.swift */,
+				FABD395927C5AC9900937083 /* RemoteFeedImageDataLoader.swift */,
 				FAB5704A25E32570002B1A28 /* RemoteFeedItem.swift */,
 				FAF717CC258FCD8C005F9242 /* RemoteFeedLoader.swift */,
 				FA9ACE4025AA6CF800532EAC /* URLSessionHTTPClient.swift */,
-				FABD395927C5AC9900937083 /* RemoteFeedImageDataLoader.swift */,
+				FA46B07927C89EE600D29973 /* Helpers */,
 			);
 			path = "Feed API";
 			sourceTree = "<group>";
@@ -905,6 +916,7 @@
 				FAF717AD258EB303005F9242 /* FeedImage.swift in Sources */,
 				FA8D40812786A6A3005A432D /* FeedPresenter.swift in Sources */,
 				FA9ACE4125AA6CF800532EAC /* URLSessionHTTPClient.swift in Sources */,
+				FA46B07B27C89F2F00D29973 /* HTTPURLResponse+StatusCode.swift in Sources */,
 				FAF2E5582702B90F00CCF882 /* ManagedCache.swift in Sources */,
 				FABBB1B227014CB800BA4259 /* CoreDataFeedStore.swift in Sources */,
 				FA8D40882786A9ED005A432D /* FeedErrorViewModel.swift in Sources */,
