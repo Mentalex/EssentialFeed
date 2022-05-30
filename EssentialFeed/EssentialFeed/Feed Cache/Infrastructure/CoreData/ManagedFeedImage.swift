@@ -8,7 +8,7 @@
 import CoreData
 
 @objc(ManagedFeedImage)
- class ManagedFeedImage: NSManagedObject {
+class ManagedFeedImage: NSManagedObject {
   @NSManaged  var id: UUID
   @NSManaged  var imageDescription: String?
   @NSManaged  var location: String?
@@ -16,7 +16,7 @@ import CoreData
   @NSManaged  var data: Data?
   @NSManaged  var cache: ManagedCache
 }
- 
+
 extension ManagedFeedImage {
   static func first(with url: URL, in context: NSManagedObjectContext) throws -> ManagedFeedImage? {
     let request = NSFetchRequest<ManagedFeedImage>(entityName: entity().name!)
@@ -26,7 +26,7 @@ extension ManagedFeedImage {
     return try context.fetch(request).first
   }
   
-   static func image(from localFeed: [LocalFeedImage], in context: NSManagedObjectContext) -> NSOrderedSet {
+  static func image(from localFeed: [LocalFeedImage], in context: NSManagedObjectContext) -> NSOrderedSet {
     return NSOrderedSet(array: localFeed.map { local in
       let managed = ManagedFeedImage(context: context)
       managed.id = local.id
@@ -37,7 +37,7 @@ extension ManagedFeedImage {
     })
   }
   
-   var local: LocalFeedImage {
+  var local: LocalFeedImage {
     return LocalFeedImage(id: id, description: imageDescription, location: location, url: url)
   }
 }
