@@ -25,7 +25,7 @@ extension CoreDataFeedStore: FeedImageDataStore {
                        completion: @escaping (FeedImageDataStore.RetrievalResult) -> Void) {
     perform { context in
       completion(Result {
-        return try ManagedFeedImage.first(with: url, in: context)?.data
+        try ManagedFeedImage.first(with: url, in: context)?.data
       })
     }
   }
