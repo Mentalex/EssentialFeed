@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FA0EA6BC292C929900E554E6 /* FeedImageDataLoaderWithFallbackComposite.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA0EA6BB292C929900E554E6 /* FeedImageDataLoaderWithFallbackComposite.swift */; };
 		FAC91A55288E11BA006B0540 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC91A54288E11BA006B0540 /* AppDelegate.swift */; };
 		FAC91A57288E11BA006B0540 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC91A56288E11BA006B0540 /* SceneDelegate.swift */; };
 		FAC91A59288E11BA006B0540 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC91A58288E11BA006B0540 /* ViewController.swift */; };
@@ -48,6 +49,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FA0EA6BB292C929900E554E6 /* FeedImageDataLoaderWithFallbackComposite.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataLoaderWithFallbackComposite.swift; sourceTree = "<group>"; };
 		FAC91A51288E11BA006B0540 /* EssentialApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = EssentialApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAC91A54288E11BA006B0540 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAC91A56288E11BA006B0540 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -106,14 +108,15 @@
 		FAC91A53288E11BA006B0540 /* EssentialApp */ = {
 			isa = PBXGroup;
 			children = (
+				FAC91A62288E11BE006B0540 /* Info.plist */,
 				FAC91A54288E11BA006B0540 /* AppDelegate.swift */,
+				FA0EA6BB292C929900E554E6 /* FeedImageDataLoaderWithFallbackComposite.swift */,
 				FADE59E928FFA68900915327 /* FeedLoaderWithFallbackComposite.swift */,
 				FAC91A56288E11BA006B0540 /* SceneDelegate.swift */,
 				FAC91A58288E11BA006B0540 /* ViewController.swift */,
 				FAC91A5D288E11BE006B0540 /* Assets.xcassets */,
 				FAC91A5F288E11BE006B0540 /* LaunchScreen.storyboard */,
 				FAC91A5A288E11BA006B0540 /* Main.storyboard */,
-				FAC91A62288E11BE006B0540 /* Info.plist */,
 			);
 			path = EssentialApp;
 			sourceTree = "<group>";
@@ -243,6 +246,7 @@
 				FAC91A55288E11BA006B0540 /* AppDelegate.swift in Sources */,
 				FADE59EA28FFA68A00915327 /* FeedLoaderWithFallbackComposite.swift in Sources */,
 				FAC91A57288E11BA006B0540 /* SceneDelegate.swift in Sources */,
+				FA0EA6BC292C929900E554E6 /* FeedImageDataLoaderWithFallbackComposite.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
