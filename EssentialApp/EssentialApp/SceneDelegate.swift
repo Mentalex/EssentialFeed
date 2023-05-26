@@ -27,9 +27,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
       .defaultDirectoryURL()
       .appendingPathComponent("feed-store.sqlite")
     
+    #if DEBUG
     if CommandLine.arguments.contains(where: { $0 == "-reset"}) {
       try? FileManager.default.removeItem(at: localStoreURL)
     }
+    #endif
     
     let localStore = try! CoreDataFeedStore(storeURL: localStoreURL)
     let localFeedLoader = LocalFeedLoader(store: localStore, currentDate: Date.init)
@@ -49,16 +51,17 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
   }
   
   private func makeRemoteClient() -> HTTPClient {
-    switch UserDefaults.standard.string(forKey: "connectivity") {
-    case "offline":
+    #if DEBUG
+    if UserDefaults.standard.string(forKey: "connectivity") == "offline" {
       return AlwaysFalingHTTPClient()
-      
-    default:
-      return URLSessionHTTPClient(session: URLSession(configuration: .ephemeral))
     }
+    #endif
+    
+    return URLSessionHTTPClient(session: URLSession(configuration: .ephemeral))
   }
 }
 
+#if DEBUG
 private class AlwaysFalingHTTPClient: HTTPClient {
   private class Task: HTTPClientTask {
     func cancel() {}
@@ -69,3 +72,4 @@ private class AlwaysFalingHTTPClient: HTTPClient {
     return Task()
   }
 }
+#endif
