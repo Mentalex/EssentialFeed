@@ -77,7 +77,7 @@ final class FeedAcceptanceTests: XCTestCase {
   }
   
   private class InMemoryFeedStore: FeedStore, FeedImageDataStore {
-    private var feedCache: CacheFeed?
+    private var feedCache: CachedFeed?
     private var feedImageDataCache: [URL: Data] = [:]
     
     func deleteCachedFeed(completion: @escaping DeletionCompletion) {
