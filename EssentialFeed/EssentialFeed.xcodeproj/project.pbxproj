@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		480886E32A9D9D1900F45422 /* FeedSnapshotTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 480886E22A9D9D1900F45422 /* FeedSnapshotTests.swift */; };
 		4895F22929C949AE00461641 /* FeedCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4895F22829C949AE00461641 /* FeedCache.swift */; };
 		48975AC92A9853F9003C0D86 /* EssentialFeediOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FAECF6122707F106009F4CF5 /* EssentialFeediOS.framework */; platformFilter = ios; };
 		48EBC36A29CD010F00B4307B /* FeedImageDataCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 48EBC36929CD010F00B4307B /* FeedImageDataCache.swift */; };
@@ -141,6 +142,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		480886E22A9D9D1900F45422 /* FeedSnapshotTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedSnapshotTests.swift; sourceTree = "<group>"; };
 		4895F22829C949AE00461641 /* FeedCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCache.swift; sourceTree = "<group>"; };
 		48975AC52A9853F9003C0D86 /* EssentialFeediOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EssentialFeediOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		48EBC36929CD010F00B4307B /* FeedImageDataCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedImageDataCache.swift; sourceTree = "<group>"; };
@@ -278,6 +280,7 @@
 		48975AC62A9853F9003C0D86 /* EssentialFeediOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				480886E22A9D9D1900F45422 /* FeedSnapshotTests.swift */,
 			);
 			path = EssentialFeediOSTests;
 			sourceTree = "<group>";
@@ -808,6 +811,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				480886E32A9D9D1900F45422 /* FeedSnapshotTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
