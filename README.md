@@ -8,6 +8,8 @@ I just put in practice the mentoring sessions of the [iOS Lead Essentials](https
 
 ![](https://github.com/Mentalex/EssentialFeed/actions/workflows/CI-macOS/badge.svg)
 
+![](https://github.com/Mentalex/EssentialFeed/actions/workflows/Deploy/badge.svg)
+
 ## BDD Specs
 
 ### Story: Customer requests to see their image feed
