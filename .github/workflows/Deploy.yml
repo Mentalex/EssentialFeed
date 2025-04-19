@@ -1,0 +1,78 @@
+name: Deploy
+
+# Triggers the workflow on push event for the main branch
+on:
+  push:
+    branches: [ main ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build-and-deploy"
+  build-and-deploy:
+    # The type of runner that the job will run on
+    runs-on: self-hosted
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+
+    - name: Install Provisioning Profile
+      run: |
+        gpg --quiet --batch --yes --decrypt --passphrase="${{ secrets.SECRET_KEY }}" --output .github/deployment/profile.mobileprovision .github/deployment/profile.mobileprovision.gpg
+        mkdir -p ~/Library/MobileDevice/Provisioning\ Profiles
+        cp .github/deployment/profile.mobileprovision ~/Library/MobileDevice/Provisioning\ Profiles/
+
+    # If we use `self-hosted` runner,
+    # we want to generate a temporal distribution keychain,
+    # to avoid override the build keychain installed on the self-hosted runner.
+    # This keychain will be deleted at the end of the workflow.
+    - name: Create and Install Temporal Keychain Distribution Certificate
+      run: |
+        gpg --quiet --batch --yes --decrypt \
+        --passphrase="${{ secrets.SECRET_KEY }}" \
+        --output .github/deployment/certificate.p12 .github/deployment/certificate.p12.gpg
+
+        security create-keychain -p "" temp-ci-distribution.keychain
+        security set-keychain-settings temp-ci-distribution.keychain
+        security unlock-keychain -p "" temp-ci-distribution.keychain
+        existing=$(security list-keychains | sed 's/[" ]//g')
+        security list-keychains -s temp-ci-distribution.keychain $existing
+
+        security import .github/deployment/certificate.p12 \
+        -k temp-ci-distribution.keychain \
+        -P "${{ secrets.CERTIFICATE_PASSWORD }}" \
+        -T /usr/bin/xcrun \
+        -T /usr/bin/xcodebuild
+
+        security set-key-partition-list -S apple-tool:,apple: -s -k "" temp-ci-distribution.keychain
+
+    # Selects the appropriate Xcode version installed on the self-hosted runner
+    - name: Select Xcode
+      run: sudo xcode-select -switch /Applications/Xcode.app
+
+    - name: Set build number
+      run: |
+        buildNumber=$(($GITHUB_RUN_NUMBER + 1))
+        /usr/libexec/PlistBuddy -c "Set :CFBundleVersion $buildNumber" "EssentialApp/EssentialApp/Info.plist"
+
+    - name: Build
+      run: xcodebuild clean archive -sdk iphoneos -workspace EssentialApp/EssentialApp.xcworkspace -configuration "Release" -scheme "EssentialApp" -derivedDataPath "DerivedData" -archivePath "DerivedData/Archive/EssentialApp.xcarchive"
+
+    - name: Export
+      run: xcodebuild -exportArchive -archivePath DerivedData/Archive/EssentialApp.xcarchive -exportOptionsPlist .github/deployment/ExportOptions.plist -exportPath DerivedData/ipa
+
+    - name: Deploy
+      run: |
+        xcrun altool --upload-app \
+        --type ios \
+        --file "DerivedData/ipa/EssentialApp.ipa" \
+        --username "${{ secrets.APPSTORE_USERNAME }}" \
+        --password "${{ secrets.APPSTORE_PASSWORD }}" \
+        --verbose
+
+    - name: Delete Temporal Keychain
+      # Ensure it runs even if a build fails.
+      if: always() 
+      run: |
+        security delete-keychain temp-ci-distribution.keychain || true

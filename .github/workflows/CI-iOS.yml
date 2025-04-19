@@ -1,0 +1,29 @@
+name: CI-iOS
+
+# Triggers the workflow on pull request event for the main branch
+on:
+  pull_request:
+    branches: [ main ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This job is responsible for building and testing the iOS project
+  build-and-test:
+    # Specifies the type of runner to execute the job
+    runs-on: self-hosted
+
+    # Sets a timeout for the job to prevent it from running indefinitely
+    timeout-minutes: 8
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+    # Checks out the repository under $GITHUB_WORKSPACE, so our job can access it
+    - uses: actions/checkout@v2
+
+    # Selects the appropriate Xcode version installed on the self-hosted runner
+    - name: Select Xcode
+      run: sudo xcode-select -switch /Applications/Xcode.app
+
+    # Builds and tests the iOS project using Xcode
+    - name: CI_iOS build and test
+      run: xcodebuild clean build test -workspace EssentialApp/EssentialApp.xcworkspace -scheme "CI_iOS" CODE_SIGNING_IDENTITY="" CODE_SIGNING_REQUIRED=NO  -sdk iphonesimulator -destination "platform=iOS Simulator,OS=18.3.1,name=iPhone 16 Pro" ONLY_ACTIVE_ARCH=YES
